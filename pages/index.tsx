@@ -6,6 +6,7 @@ import React from 'react'
 import Layout, {siteTitle} from '../components/layout'
 import { getSortedPostsData } from '../lib/fetchposts'
 import utilStyles from '../styles/utils.module.css'
+import { randomUUID } from 'crypto'
 
 type PostT = {
   id:string,
@@ -27,7 +28,7 @@ const Home: React.FC<PostsT> = ({allPostsData}) => {
       <div className={utilStyles.container}>
       <>
       {allPostsData.map((Post) => {
-      const items = [<ul className={utilStyles.list}></ul>]
+      const items = [<ul className={utilStyles.list} key={randomUUID()}></ul>]
       items.push(
         <li className={utilStyles.listItem} key={Post.id}>
           <Link href={`/posts/${Post.id}`}>
