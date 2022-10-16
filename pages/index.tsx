@@ -6,8 +6,7 @@ import React from 'react'
 import Layout, {siteTitle} from '../components/layout'
 import { getSortedPostsData } from '../lib/fetchposts'
 import utilStyles from '../styles/utils.module.css'
-import "react-native-get-random-values";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid"
 
 type PostT = {
   id:string,
